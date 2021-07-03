@@ -26,11 +26,7 @@
         </v-list-item>
         <v-list-item justify-content>
           <v-list-item-content>
-            <v-btn
-              color="amber lighten-1"
-              outlined
-              href="omairapalacios.pdf"
-              target="_bank"
+            <v-btn color="amber" href="omairapalacios.pdf" target="_bank"
               >My resume</v-btn
             >
           </v-list-item-content>

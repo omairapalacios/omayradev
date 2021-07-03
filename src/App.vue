@@ -34,8 +34,7 @@
           <div @click="$vuetify.goTo('#work', scrollOptions)">Work</div>
           <div @click="$vuetify.goTo('#contact', scrollOptions)">Contact</div>
           <v-btn
-            elevation="0"
-            color="amber lighten-1"
+            color="amber"
             class="ml-3"
             href="omairapa
           lacios-resume.pdf"
@@ -86,7 +85,7 @@ export default {
 
   computed: {
     themeColor() {
-      return this.isDark ? 'yellow' : 'blue lighten-3';
+      return this.isDark ? 'yellow' : 'accent';
     },
   },
 

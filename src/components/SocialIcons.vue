@@ -3,11 +3,11 @@
     <a
       v-for="(item, index) in icons"
       :key="index"
-      class="social-icon-container my-2 mx-1"
+      class="social-icon-container my-3 mx-1"
       target="_blank"
       :href="item.link"
     >
-      <v-icon :dark="isDark" :title="item.name" class="social-icon" size="30">{{
+      <v-icon :dark="isDark" :title="item.name" class="social-icon" size="35">{{
         item.icon
       }}</v-icon>
     </a>
@@ -57,7 +57,7 @@ export default {
 }
 
 .social-icon:hover {
-  color: #4fc08d;
+  color: #48e9ff;
   top: 2px;
 }
 
