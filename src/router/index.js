@@ -20,8 +20,8 @@ const router = new VueRouter({
     },
     {
       path: '/main',
-      name: 'root',
-      component: () => import('@/views/Root'),
+      name: 'main',
+      component: () => import('@/views/Main'),
     },
     {
       path: '/archive',
