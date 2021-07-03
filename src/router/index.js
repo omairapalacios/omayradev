@@ -24,9 +24,9 @@ const router = new VueRouter({
       component: () => import('@/views/Main'),
     },
     {
-      path: '/archive',
-      name: 'archive',
-      component: () => import('@/views/Archive'),
+      path: '/projects',
+      name: 'projects',
+      component: () => import('@/views/Projects'),
     },
   ],
 });
