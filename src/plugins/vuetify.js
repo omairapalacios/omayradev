@@ -8,11 +8,13 @@ export default new Vuetify({
     themes: {
       light: {
         accent: '#48E9FF',
-        amber: '#FFCC19'
+        amber: '#FFCC19',
+        black: '#0b0b0b'
       },
       dark: {
         accent: '#48E9FF',
-        amber: '#FFCC19'
+        amber: '#FFCC19',
+        black: '#0b0b0b'
       },
     },
   },

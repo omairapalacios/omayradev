@@ -133,6 +133,7 @@ export default {
 
 .description {
   width: 400px;
+  margin-top: 50px;
 }
 
 @media only screen and (max-width: 599px) {

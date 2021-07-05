@@ -9,6 +9,7 @@
     <template #content>
       <v-container class="d-flex justify-center flex-wrap">
         <v-card
+          :dark="isDark"
           v-for="repo in portfolio"
           :key="repo.id"
           class="my-4"
@@ -27,7 +28,6 @@
               <v-row class="ma-2"
                 ><v-chip
                   class="ma-1"
-                  color="black"
                   outlined
                   v-for="(tech, index) in repo.stack"
                   :key="index"
@@ -59,6 +59,7 @@ import axios from 'axios';
 
 export default {
   name: 'Projects',
+  props: ['isDark'],
   components: {
     Slug,
   },
