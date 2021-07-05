@@ -27,10 +27,10 @@
         <v-list-item justify-content>
           <v-list-item-content>
             <v-btn
-              color="amber"
+              class="amber black--text"
               href="https://drive.google.com/file/d/1Gcygrw4FJlkuoHtP2m1nLpweV4I6z6Wp/view?usp=sharing"
               target="_bank"
-              >My resume</v-btn
+              >{{ this.isEnglish ? 'My resume' : 'Mi CV' }}</v-btn
             >
           </v-list-item-content>
         </v-list-item>
@@ -42,14 +42,26 @@
 <script>
 export default {
   name: 'RightNav',
+  props: { isEnglish: Boolean },
   data() {
     return {
       drawer: false,
       items: [
-        { title: 'About', icon: 'mdi-home-city', target: '#about' },
-        { title: 'Experience', icon: 'mdi-account', target: '#experience' },
-        { title: 'Work', icon: 'mdi-account-group-outline', target: '#work' },
-        { title: 'Contact', icon: 'mdi-account-group-outline', target: '#contact' },
+        {
+          title: this.isEnglish ? 'About' : 'Acerca de mí',
+          icon: 'mdi-home-city',
+          target: '#about',
+        },
+        {
+          title: this.isEnglish ? 'My projects' : 'Mis proyectos',
+          icon: 'mdi-account-group-outline',
+          target: '#work',
+        },
+        {
+          title: this.isEnglish ? 'Contact' : 'Contacto',
+          icon: 'mdi-account-group-outline',
+          target: '#contact',
+        },
       ],
       scrollOptions: {
         duration: 300,

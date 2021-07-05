@@ -1,9 +1,9 @@
 <template>
   <div :class="theme">
-    <Home :isDark="isDark" />
-    <About :isDark="isDark" />
-    <Projects :isDark="isDark" />
-    <Contact :isDark="isDark" />
+    <Home :isDark="isDark" :isEnglish="isEnglish" />
+    <About :isDark="isDark" :isEnglish="isEnglish" />
+    <Projects :isDark="isDark" :isEnglish="isEnglish" />
+    <Contact :isDark="isDark" :isEnglish="isEnglish" />
     <div
       :class="[
         theme,
@@ -16,7 +16,11 @@
     >
       <a href="https://github.com/omairapalacios" target="_blank">
         <v-icon :dark="isDark" class="mr-2">fab fa-github</v-icon>
-        <span>Made with love by Omaira Palacios</span>
+        <span>{{
+          isEnglish
+            ? 'Made with love by Omaira Palacios'
+            : 'Hecho con amor por Omaira Palacios'
+        }}</span>
       </a>
     </div>
   </div>
@@ -30,7 +34,7 @@ const Contact = () => import('@/views/Contact.vue');
 
 export default {
   name: 'Root',
-  props: { isDark: Boolean },
+  props: { isDark: Boolean, isEnglish: Boolean },
   components: {
     Home,
     About,

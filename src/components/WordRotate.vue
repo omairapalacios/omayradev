@@ -9,10 +9,27 @@
 <script>
 export default {
   name: 'WordRotate',
+  props: { isEnglish: Boolean },
   data() {
     return {
-      words: ['for the web.', 'using Vue.js.', 'using Node.js.', 'with Google Cloud/AWS'],
+      wordsEnglish: [
+        'for the web.',
+        'using Vue.js.',
+        'using Node.js.',
+        'with Google Cloud/AWS',
+      ],
+      wordsSpanish: [
+        'para la Web.',
+        'usando Vue.js.',
+        'usando Node.js.',
+        'con Google Cloud/AWS',
+      ],
     };
+  },
+  computed: {
+    words() {
+      return this.isEnglish ? this.wordsEnglish : this.wordsSpanish;
+    },
   },
   methods: {},
 };

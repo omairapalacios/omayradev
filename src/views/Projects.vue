@@ -3,7 +3,7 @@
     <template #header>
       <div id="projects" class="text-h5 text-sm-h4">
         <span class="cyan accent-2">02.</span>
-        Projects
+        {{ isEnglish ? 'Projects' : 'Proyectos' }}
       </div>
     </template>
     <template #content>
@@ -36,13 +36,13 @@
               >
               <v-card-actions>
                 <v-btn
-                  class="ml-2 mt-5"
+                  class="ml-2 mt-5 black--text"
                   color="amber"
                   target="_blank"
                   :href="repo.html_url"
                   elevation="0"
                 >
-                  See more
+                  {{ isEnglish ? 'See more' : 'Ver más' }}
                 </v-btn>
               </v-card-actions>
             </v-col>
@@ -59,7 +59,7 @@ import axios from 'axios';
 
 export default {
   name: 'Projects',
-  props: ['isDark'],
+  props: ['isDark', 'isEnglish'],
   components: {
     Slug,
   },

@@ -3,7 +3,7 @@
     <template #header>
       <div id="about" class="text-h5 text-sm-h4">
         <span class="cyan accent-2">01.</span>
-        About Me
+        {{ isEnglish ? ' About Me' : 'Acerca de mi' }}
       </div>
     </template>
     <template #content>
@@ -26,9 +26,9 @@
                 </v-list-item-icon>
                 <v-list-item-content>
                   <p>
-                    Hi, my name
-                    <b>Omaira Palacios</b>. Sometimes people call me <b>Omayra</b> or
-                    <b>Cristina</b> (which is my middle name).
+                    {{ isEnglish ? ' Hi, my name' : 'Hola, mi nombre es' }} <b>Omaira</b>,
+                    {{ isEnglish ? ' but Everyone call me ' : 'pero todos me llaman ' }}
+                    <b>Omayra</b>
                   </p>
                 </v-list-item-content>
               </v-list-item>
@@ -38,11 +38,21 @@
                 </v-list-item-icon>
                 <v-list-item-content>
                   <p>
-                    I am a
-                    <b>Software Engineer</b> based in <b>Lima</b> specializing in
-                    <b>web development</b> and <b>cloud engineering</b>. Aside from
-                    <b>coding</b>, I also enjoy <b>meeting with people</b> and
-                    <b>learning new things</b>.
+                    {{ isEnglish ? 'I am a ' : 'Yo soy ' }}
+                    <b>Software Engineer</b>
+                    {{ isEnglish ? 'based in ' : 'vivo en ' }}<b>Perú.</b>
+                    {{ isEnglish ? ' specializing in' : 'tengo experiencia en' }}
+                    <b>web development</b> {{ isEnglish ? 'and' : 'y' }}
+                    <b>cloud engineering</b>.
+                    {{ isEnglish ? 'Aside from' : 'Aparte de hacer' }}
+                    <b>{{ isEnglish ? 'coding' : 'código' }}</b
+                    >, {{ isEnglish ? 'I also enjoy' : 'también disfruto' }}
+                    <b>{{ isEnglish ? 'meeting with people' : 'conocer gente' }}</b>
+                    {{ isEnglish ? 'and' : 'y' }}
+                    <b>{{
+                      isEnglish ? 'learning new things' : 'aprender nuevas cosas'
+                    }}</b
+                    >.
                   </p>
                 </v-list-item-content>
               </v-list-item>
@@ -52,10 +62,21 @@
                 </v-list-item-icon>
                 <v-list-item-content>
                   <p>
-                    My current technology stack comprises of
-                    <b>Vue.js</b>, <b>Node.js</b> and
-                    <b>Google Cloud Platform/AWS, </b>but also I'm learning
-                    <b>React</b> and <b>Python.</b>
+                    {{
+                      isEnglish
+                        ? 'My current technology stack comprises of'
+                        : 'Mi stack favorito de tecnologías es'
+                    }}
+                    <b>Vue.js</b>, <b>Node.js</b>
+                    {{ isEnglish ? 'and' : '&' }}
+                    <b>Google Cloud Platform/AWS, </b
+                    >{{
+                      isEnglish
+                        ? "but also I'm learning"
+                        : 'pero también me gusta intentar nuevos retos, actualmente estoy aprendiendo'
+                    }}
+                    <b>React</b> &
+                    <b>Python.</b>
                   </p>
                 </v-list-item-content>
               </v-list-item>
@@ -65,8 +86,25 @@
                 </v-list-item-icon>
                 <v-list-item-content>
                   <p>
-                    I got my Bachelor's Degree in
-                    <b>Computer Science</b> at <b>University of Piura</b>.
+                    {{ isEnglish ? "I got my Bachelor's Degree in" : 'Me gradué en' }}
+
+                    <b>
+                      {{ isEnglish ? 'Computer Science' : 'Ingeniería Informática' }}</b
+                    >
+                    {{ isEnglish ? 'at' : 'en' }}
+                    <b>
+                      {{
+                        isEnglish
+                          ? 'University of Piura'
+                          : 'la universidad Nacional de Piura'
+                      }}</b
+                    >.
+                    {{ isEnglish ? 'and also I studied at ' : 'y también estudié en' }}
+                    <b>
+                      {{
+                        isEnglish ? 'Laboratoria Bootcamp' : 'el bootcamp de laboratoria'
+                      }}</b
+                    >.
                   </p>
                 </v-list-item-content>
               </v-list-item>
@@ -82,7 +120,7 @@
 const Slug = () => import('@/views/Slug');
 export default {
   name: 'About',
-  props: { isDark: Boolean },
+  props: { isDark: Boolean, isEnglish: Boolean },
   components: {
     Slug,
   },

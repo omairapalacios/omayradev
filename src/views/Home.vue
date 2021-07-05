@@ -11,7 +11,9 @@
         <v-container>
           <v-row>
             <v-col class="mb-4">
-              <div class="title accent--text font-weight-bold mb-4">Hi, my name is</div>
+              <div class="title accent--text font-weight-bold mb-4">
+                {{ isEnglish ? 'Hi, my name is' : 'Hola, mi nombre es' }}
+              </div>
               <transition name="slide-fade">
                 <div
                   transition="fade-transition"
@@ -28,7 +30,7 @@
                   v-if="showTitle"
                   class="text-h4 text-sm-h3 font-weight-bold mb-5 grey--text"
                 >
-                  I build things
+                  {{ isEnglish ? 'I build things' : 'Yo construyo grandes cosas' }}
                   <WordRotate />
                 </h2>
               </transition>
@@ -38,14 +40,16 @@
                   v-if="showBio"
                   class="description text-body-1 font-weight-regular"
                 >
-                  I'm a
+                  {{ isEnglish ? "I'm a" : 'Yo soy' }}
                   <span class="font-weight-bold accent--text"
                     >full-stack software engineer</span
                   >
-                  who specializes in
-                  <i>web development</i> and <i>cloud engineering</i> using
+                  {{ isEnglish ? 'who specializes in' : 'con experiencia en' }}
+                  <i>web development</i> & <i>cloud engineering</i>
+                  {{ isEnglish ? 'using' : 'usando' }}
                   <span class="font-weight-bold">Vue.js</span>,
-                  <span class="font-weight-bold">Node.js</span> and
+                  <span class="font-weight-bold">Node.js</span>
+                  {{ isEnglish ? 'and' : 'y' }}
                   <span class="font-weight-bold">Google Cloud Platform/AWS</span>.
                 </p>
               </transition>
@@ -58,7 +62,8 @@
                   :href="mailTo"
                   elevation="0"
                 >
-                  <v-icon color="black" class="mr-5">fa-envelope</v-icon>Get in touch
+                  <v-icon color="black" class="mr-5">fa-envelope</v-icon
+                  >{{ isEnglish ? 'Get in touch' : 'Contáctame' }}
                 </v-btn>
               </transition>
             </v-col>
@@ -79,7 +84,7 @@ const WordRotate = () => import('@/components/WordRotate.vue');
 
 export default {
   name: 'Home',
-  props: ['isDark'],
+  props: ['isDark', 'isEnglish'],
   data: () => ({
     showName: false,
     showTitle: false,

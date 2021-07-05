@@ -12,7 +12,7 @@ export default {
   },
   watch: {
     message: {
-      handler(newVal) {
+      /*  handler(newVal) {
         if (newVal === 'Palacios') {
           setTimeout(() => {
             this.message = 'Dev';
@@ -23,7 +23,7 @@ export default {
           }, 3000);
         }
       },
-      immediate: true,
+      immediate: true, */
     },
   },
 };
@@ -62,7 +62,7 @@ export default {
     width: 2.97em;
   }
   40% {
-    width: 4.97em;
+    width: 3.97em;
   }
   50% {
     width: 0em;

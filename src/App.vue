@@ -21,24 +21,36 @@
         </v-btn>
       </div>
       <v-spacer></v-spacer>
-      <v-switch v-model="isDark" class="d-flex d-sm-none mt-5">
+      <v-switch v-model="isDark" color="pink" class="d-flex d-sm-none mt-5">
         <template #prepend>
           <v-icon :color="themeColor">fas fa-moon</v-icon>
+        </template>
+      </v-switch>
+      <v-switch class="d-flex d-sm-none mt-5" color="pink" v-model="isEnglish">
+        <template #prepend>
+          <p v-if="isDark" class="white--text font-weigth-bold">EN</p>
+          <p v-else class="font-weigth-bold">EN</p>
         </template>
       </v-switch>
       <v-spacer></v-spacer>
       <transition name="slide-fade">
         <div class="d-none d-sm-flex flex-row nav-links align-center">
-          <div @click="$vuetify.goTo('#about', scrollOptions)">About</div>
-          <div @click="$vuetify.goTo('#projects', scrollOptions)">Projects</div>
-          <div @click="$vuetify.goTo('#contact', scrollOptions)">Contact</div>
+          <div @click="$vuetify.goTo('#about', scrollOptions)">
+            {{ this.isEnglish ? 'About me' : 'Acerca de mí' }}
+          </div>
+          <div @click="$vuetify.goTo('#projects', scrollOptions)">
+            {{ this.isEnglish ? 'Projects' : 'Proyectos' }}
+          </div>
+          <div @click="$vuetify.goTo('#contact', scrollOptions)">
+            {{ this.isEnglish ? 'Contact' : 'Contacto' }}
+          </div>
           <v-btn
             color="amber"
-            class="ml-3"
+            class="ml-3 black--text"
             href="https://drive.google.com/file/d/1Gcygrw4FJlkuoHtP2m1nLpweV4I6z6Wp/view?usp=sharing"
             target="_bank"
             elevation="0"
-            >My resume</v-btn
+            >{{ this.isEnglish ? 'My resume' : 'Mi CV' }}</v-btn
           >
         </div>
       </transition>
@@ -46,19 +58,23 @@
     </v-app-bar>
 
     <v-main class="main">
-      <router-view :isDark="isDark"></router-view>
+      <router-view :isDark="isDark" :isEnglish="isEnglish"></router-view>
 
       <div class="social-links d-none d-sm-flex">
         <SocialIcons :isDark="isDark" />
       </div>
-
-      <div class="theme-toggle d-none d-sm-flex flex-row align-center justify-center">
+      <div class="theme-toggle ma-10 d-none d-sm-flex flex-row align-center">
         <v-icon class="mr-3" :color="themeColor">fas fa-moon</v-icon>
-        <v-switch v-model="isDark"> </v-switch>
+        <v-switch color="pink" v-model="isDark"> </v-switch>
+      </div>
+
+      <div class="languaje-toggle my-10 d-none d-sm-flex flex-row align-center">
+        <p class="ma-4 grey--text">EN</p>
+        <v-switch color="pink" v-model="isEnglish"> </v-switch>
       </div>
     </v-main>
 
-    <RightNav ref="rightNav" />
+    <RightNav ref="rightNav" :isEnglish="isEnglish" />
   </v-app>
 </template>
 
@@ -80,8 +96,11 @@ export default {
       easing: 'easeInOutCubic',
     },
     isDark: false,
+    isEnglish: false,
   }),
-
+  created() {
+    console.log(this.$props);
+  },
   computed: {
     themeColor() {
       return this.isDark ? 'yellow' : 'accent';
@@ -123,6 +142,16 @@ export default {
   display: block;
   bottom: 0px;
   left: 0px;
+}
+
+.languaje-toggle {
+  transform: rotate(90deg);
+  width: 80px;
+  height: 150px;
+  position: fixed;
+  display: block;
+  bottom: 55px;
+  left: 10px;
 }
 
 .nav-links div {
