@@ -26,7 +26,10 @@
         </v-list-item>
         <v-list-item justify-content>
           <v-list-item-content>
-            <v-btn color="amber" href="omairapalacios.pdf" target="_bank"
+            <v-btn
+              color="amber"
+              href="https://drive.google.com/file/d/1Gcygrw4FJlkuoHtP2m1nLpweV4I6z6Wp/view?usp=sharing"
+              target="_bank"
               >My resume</v-btn
             >
           </v-list-item-content>

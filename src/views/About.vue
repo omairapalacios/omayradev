@@ -66,8 +66,7 @@
                 <v-list-item-content>
                   <p>
                     I got my Bachelor's Degree in
-                    <b>Computer Science</b> at <b>University of Piura</b>, specializing in
-                    Software Technology.
+                    <b>Computer Science</b> at <b>University of Piura</b>.
                   </p>
                 </v-list-item-content>
               </v-list-item>

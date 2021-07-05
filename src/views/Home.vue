@@ -56,6 +56,7 @@
                   color="amber"
                   target="_blank"
                   :href="mailTo"
+                  elevation="0"
                 >
                   <v-icon color="black" class="mr-5">fa-envelope</v-icon>Get in touch
                 </v-btn>

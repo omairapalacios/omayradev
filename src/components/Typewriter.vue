@@ -20,7 +20,7 @@ export default {
         } else {
           setTimeout(() => {
             this.message = 'Palacios';
-          }, 5000);
+          }, 3000);
         }
       },
       immediate: true,
@@ -47,7 +47,7 @@ export default {
 }
 
 .reverse-typewrite {
-  animation: typewriter 8s steps(5) infinite forwards,
+  animation: typewriter 8s steps(8) infinite forwards,
     cursorBlink 800ms steps(80) infinite normal;
 }
 
@@ -62,13 +62,13 @@ export default {
     width: 2.97em;
   }
   40% {
-    width: 2.97em;
+    width: 4.97em;
   }
   50% {
     width: 0em;
   }
   60% {
-    width: 2.97em;
+    width: 3.97em;
   }
   90% {
     width: 2.97em;

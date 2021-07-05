@@ -2,6 +2,8 @@
   <div :class="theme">
     <Home :isDark="isDark" />
     <About :isDark="isDark" />
+    <Projects :isDark="isDark" />
+    <Contact :isDark="isDark" />
     <div
       :class="[
         theme,
@@ -23,6 +25,8 @@
 <script>
 const Home = () => import('@/views/Home.vue');
 const About = () => import('@/views/About.vue');
+const Projects = () => import('@/views/Projects.vue');
+const Contact = () => import('@/views/Contact.vue');
 
 export default {
   name: 'Root',
@@ -30,10 +34,12 @@ export default {
   components: {
     Home,
     About,
+    Projects,
+    Contact,
   },
   computed: {
     theme() {
-      return this.isDark ? ['secondary', 'white-text'] : '';
+      return this.isDark ? ['black', 'white-text'] : '';
     },
   },
 };

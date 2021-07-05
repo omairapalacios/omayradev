@@ -30,15 +30,14 @@
       <transition name="slide-fade">
         <div class="d-none d-sm-flex flex-row nav-links align-center">
           <div @click="$vuetify.goTo('#about', scrollOptions)">About</div>
-          <div @click="$vuetify.goTo('#experience', scrollOptions)">Experience</div>
-          <div @click="$vuetify.goTo('#work', scrollOptions)">Work</div>
+          <div @click="$vuetify.goTo('#projects', scrollOptions)">Projects</div>
           <div @click="$vuetify.goTo('#contact', scrollOptions)">Contact</div>
           <v-btn
             color="amber"
             class="ml-3"
-            href="omairapa
-          lacios-resume.pdf"
+            href="https://drive.google.com/file/d/1Gcygrw4FJlkuoHtP2m1nLpweV4I6z6Wp/view?usp=sharing"
             target="_bank"
+            elevation="0"
             >My resume</v-btn
           >
         </div>
