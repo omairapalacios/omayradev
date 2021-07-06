@@ -122,6 +122,7 @@ export default {
   left: calc(50vw - 20px);
   animation: downArrow 0.8s linear infinite;
   opacity: 0;
+  cursor: pointer;
 }
 
 @keyframes downArrow {
