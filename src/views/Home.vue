@@ -31,7 +31,7 @@
                   class="text-h4 text-sm-h3 font-weight-bold mb-5 grey--text"
                 >
                   {{ isEnglish ? 'I build things' : 'Yo construyo grandes cosas' }}
-                  <WordRotate />
+                  <WordRotate :isEnglish="isEnglish"/>
                 </h2>
               </transition>
               <transition name="slide-fade">
