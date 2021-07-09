@@ -31,7 +31,7 @@
                   class="text-h4 text-sm-h3 font-weight-bold mb-5 grey--text"
                 >
                   {{ isEnglish ? 'I build things' : 'Yo construyo grandes cosas' }}
-                  <WordRotate />
+                  <WordRotate :isEnglish="isEnglish"/>
                 </h2>
               </transition>
               <transition name="slide-fade">
@@ -122,6 +122,7 @@ export default {
   left: calc(50vw - 20px);
   animation: downArrow 0.8s linear infinite;
   opacity: 0;
+  cursor: pointer;
 }
 
 @keyframes downArrow {
