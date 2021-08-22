@@ -114,7 +114,6 @@ export default {
   }),
   created() {
     this.getData();
-    console.log(this.options);
   },
   methods: {
     async getData() {
@@ -130,21 +129,20 @@ export default {
         });
     },
     getLanguages() {
-      console.log(this.repos);
-      this.portfolio = this.listOfrepos.map((repoChoosed) => {
-        let object = {};
+      this.portfolio = this.listOfrepos.filter((repoChoosed) => {
+        let repo = {};
         this.repos.forEach((repoGit) => {
           if (repoGit.name === repoChoosed.name) {
-            object = {
+            console.log(repoGit.name);
+            repo = {
               image: repoChoosed.image,
               stack: repoChoosed.stack,
               ...repoGit,
             };
           }
         });
-        return object;
+        return repo;
       });
-      console.log(this.portfolio);
     },
     goTo(url) {
       window.open(url);
