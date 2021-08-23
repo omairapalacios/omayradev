@@ -24,7 +24,7 @@
                 ><v-icon>mdi-book</v-icon>{{ repo.name }}</v-card-title
               >
 
-              <v-card-subtitle class="my-2" v-text="repo.description"></v-card-subtitle>
+              <v-card-subtitle class="my-2">{{ repo.description }}</v-card-subtitle>
               <v-row class="ma-2"
                 ><v-chip
                   class="ma-1"
@@ -133,7 +133,6 @@ export default {
         let repo = {};
         this.repos.forEach((repoGit) => {
           if (repoGit.name === repoChoosed.name) {
-            console.log(repoGit.name);
             repo = {
               image: repoChoosed.image,
               stack: repoChoosed.stack,
@@ -141,8 +140,10 @@ export default {
             };
           }
         });
-        return repo;
+        console.log(repo);
+        return true;
       });
+      console.log(this.portfolio);
     },
     goTo(url) {
       window.open(url);
