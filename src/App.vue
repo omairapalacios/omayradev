@@ -98,9 +98,6 @@ export default {
     isDark: false,
     isEnglish: false,
   }),
-  created() {
-    console.log(this.$props);
-  },
   computed: {
     themeColor() {
       return this.isDark ? 'yellow' : 'accent';
