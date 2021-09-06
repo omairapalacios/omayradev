@@ -9,7 +9,7 @@
       v-if="$route.name != 'loading'"
     >
       <div class="d-flex align-center justify-center">
-        <v-btn href="https://omayradev.app" icon>
+        <v-btn href="https://omairapalacios.netlify.app/#/main" icon>
           <v-img
             alt="ecnopdev"
             class="shrink mr-2"

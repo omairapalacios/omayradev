@@ -20,7 +20,7 @@
                   class="text-h4 text-sm-h2 font-weight-bold mb-4"
                   v-if="showName"
                 >
-                  Omayra
+                  Omaira
                   <Typewriter />
                 </div>
               </transition>
@@ -31,7 +31,7 @@
                   class="text-h4 text-sm-h3 font-weight-bold mb-5 grey--text"
                 >
                   {{ isEnglish ? 'I build things' : 'Yo construyo grandes cosas' }}
-                  <WordRotate :isEnglish="isEnglish"/>
+                  <WordRotate :isEnglish="isEnglish" />
                 </h2>
               </transition>
               <transition name="slide-fade">

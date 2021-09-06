@@ -27,8 +27,6 @@
                 <v-list-item-content>
                   <p>
                     {{ isEnglish ? ' Hi, my name' : 'Hola, mi nombre es' }} <b>Omaira</b>,
-                    {{ isEnglish ? ' but Everyone call me ' : 'pero todos me llaman ' }}
-                    <b>Omayra</b>
                   </p>
                 </v-list-item-content>
               </v-list-item>

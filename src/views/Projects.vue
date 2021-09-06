@@ -129,20 +129,22 @@ export default {
         });
     },
     getLanguages() {
-      this.portfolio = this.listOfrepos.filter((repoChoosed) => {
-        let repo = {};
-        this.repos.forEach((repoGit) => {
-          if (repoGit.name === repoChoosed.name) {
-            repo = {
-              image: repoChoosed.image,
-              stack: repoChoosed.stack,
-              ...repoGit,
-            };
-          }
+      this.portfolio = this.listOfrepos
+        .map((repo) => repo.name)
+        .filter((repoChoosed) => {
+          let repo = {};
+          this.repos.map((repoGit) => {
+            if (repoGit.name === repoChoosed) {
+              repo = {
+                image: repoChoosed.image,
+                stack: repoChoosed.stack,
+                ...repoGit,
+              };
+            }
+            console.log(repo);
+            return repo;
+          });
         });
-        console.log(repo);
-        return true;
-      });
       console.log(this.portfolio);
     },
     goTo(url) {
